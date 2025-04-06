@@ -7,7 +7,7 @@ const bcrypt = require("bcryptjs");
 // GET /api/users
 const getUsers = async (req, res) => {
    try {
-    
+      
    } catch (error) {
       res.status(500).json({ message: "Server error", error: error.message });
    }
