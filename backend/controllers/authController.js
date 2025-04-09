@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
         let role = 'member';
         if (
             adminInviteToken &&
-            adminInviteToken === process.env.ADMIN_INVITE_TOKEN
+            adminInviteToken == process.env.ADMIN_INVITE_TOKEN
         ) {
             role = 'admin';
         }
@@ -122,7 +122,7 @@ const updateUserProfile = async (req, res) => {
         }
 
         const updatedUser = await user.save();
-        res.status(200).json({
+        res.json({
             _id: updatedUser._id,
             name: updatedUser.name,
             email: updatedUser.email,
