@@ -41,13 +41,6 @@ const getUsersByid = async (req, res) => {
        res.status(500).json({ message: "Server error", error: error.message });
     }
 };
-// Delete user
-// DELETE /api/users/:id
-const deleteUser = async (req,res) => {
-    try {
-    } catch (error) {
-       res.status(500).json({ message: "Server error", error: error.message });
-    }
-};
 
-module.exports = { getUsers, getUsersByid, deleteUser };
+
+module.exports = { getUsers, getUsersByid };
