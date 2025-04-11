@@ -6,8 +6,8 @@ const { getDashboardData, getUserDashboardData, getTasks, getTaskById, createTas
 const router = express.Router();
 
 // Task Management Routes
-router.get("dashboard-data", protect, getDashboardData);
-router.get("user-dashboard-data", protect, getUserDashboardData);
+router.get("/dashboard-data", protect, getDashboardData);
+router.get("/user-dashboard-data", protect, getUserDashboardData);
 router.get("/", protect, getTasks); // Get all tasks
 router.get("/:id", protect, getTaskById); // Get task by ID
 router.post("/", protect, adminOnly, createTask); // Create a new task
