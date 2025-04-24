@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import PrivateRoute from './routes/PrivateRoute'; 
 import Login from './pages/Auth/Login';
-import SignUp from './pages/Auth/signUp';
+import SignUp from './pages/Auth/SignUp';
 import Dashboard from './pages/Admin/Dashboard';
 import ManageTask from './pages/Admin/ManageTask';
 import ManageUsers from './pages/Admin/ManageUsers';
@@ -14,10 +14,12 @@ import CreateTask from './pages/Admin/CreateTask';
 import UserDashboard from './pages/User/UserDashboard';
 import MyTasks from './pages/User/MyTasks';
 import ViewTaskDetails from './pages/User/ViewTaskDetails';
+import UserProvider from './context/userContext';
 
 
 function App() {
   return (
+    <UserProvider>
     <div>
       <Router>
         <Routes>
@@ -42,6 +44,7 @@ function App() {
         </Routes>
       </Router>
     </div>
+    </UserProvider>
   )
 }
 
