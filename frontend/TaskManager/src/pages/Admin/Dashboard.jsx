@@ -14,7 +14,7 @@ import CustomPieChart from '../../components/Charts/CustomPieChart';
 import CustomBarChart from '../../components/Charts/CustomBarChart';
 
 
-const COLORS = ["#8D51FF", "00B8DB", "7BCE00"]
+const COLORS = ["#8D51FF", "#00B8DB", "#7BCE00"]
 
 const Dashboard = () => {
   useUserAuth();
@@ -24,8 +24,8 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const [dashboardData, setDashboardData] = useState(null);
-  const [pieChartData, setPieChartData] = useState(null);
-  const [barChartData, setBarChartData] = useState(null);
+  const [pieChartData, setPieChartData] = useState([]);
+  const [barChartData, setBarChartData] = useState([]);
 
 
   // Prepare Chart Data
@@ -36,9 +36,9 @@ const Dashboard = () => {
     const taskDistributionData = [
       { status: "Pending", count: taskDistribution?.Pending || 0 },
       { status: "In Progress", count: taskDistribution?.InProgress || 0 },
-      { status: "Completed", count: taskDistribution?.Completed || 0 },
+      { status: "Completed", count: taskDistribution?.Completed || 0 }, // ✅
     ];
-
+    
     setPieChartData(taskDistributionData);
 
     const PriorityLevelData = [
