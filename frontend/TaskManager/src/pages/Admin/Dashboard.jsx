@@ -75,7 +75,8 @@ const Dashboard = () => {
   }, []);
   return (
     <DashboardLayout activeMenu="Dashboard">
-      <div className='card my-5'>
+      <div className='overflow-auto max-h-[calc(100vh-100px)] px-4'>
+      <div className='card my-5 '>
         <div> 
           <div className='col-span-3'>
             <h2 className='text-xl md:text-2xl'>Good Morning! {user?.name}</h2>
@@ -158,6 +159,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      </div>
+     
     </DashboardLayout>
   )
 }
